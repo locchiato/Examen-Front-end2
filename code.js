@@ -8,7 +8,6 @@ let datosPersona = {
 function obtenerDatosDelUsuario() {
     /* --------------- PUNTO 1: Escribe tu codigo a partir de aqui --------------- */
 
-    let aux = datosPersona;
     //Si el usuario selecciona cancelar, deja de solicitar datos
     //Nombre
     let nombre = prompt("Ingresá tu nombre.");
