@@ -7,16 +7,16 @@ let datosPersona = {
 
 function obtenerDatosDelUsuario() {
     /* --------------- PUNTO 1: Escribe tu codigo a partir de aqui --------------- */
-
+    let nombre, anio, ciudad;
     //Si el usuario selecciona cancelar, deja de solicitar datos
     //Nombre
-    let nombre = prompt("Ingresá tu nombre.");
+    nombre = prompt("Ingresá tu nombre.");
     if (nombre) {
         //Año
-        let anio = prompt("Ingresá el año en que naciste.");
+        anio = prompt("Ingresá el año en que naciste.");
         if (anio) {
             //Ciudad
-            let ciudad = prompt("Ingresá la ciudad en donde vives.");
+            ciudad = prompt("Ingresá la ciudad en donde vives.");
         }
     }
 
