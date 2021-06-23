@@ -15,12 +15,8 @@ function obtenerDatosDelUsuario() {
         //Año
         let anio = prompt("Ingresá el año en que naciste.");
         if (anio) {
-            datosPersona.edad = 2021 - anio;
             //Ciudad
             let ciudad = prompt("Ingresá la ciudad en donde vives.");
-            if (ciudad) {
-                datosPersona.ciudad = ciudad;
-            }
         }
     }
 
