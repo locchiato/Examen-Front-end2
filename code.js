@@ -21,17 +21,16 @@ function obtenerDatosDelUsuario() {
             let ciudad = prompt("Ingresá la ciudad en donde vives.");
             if (ciudad) {
                 datosPersona.ciudad = ciudad;
-                //Js
-                datosPersona.interesPorJs = confirm("¿Te interesa JavaScript?") ? "Sí" : "No";
             }
         }
     }
 
     // Si no puso cancelar cargo los datos
-    if (nombre && anio && ciudad && interesPorJs) {
+    if (nombre && anio && ciudad) {
         datosPersona.nombre = nombre;
         datosPersona.edad = 2021 - anio;
         datosPersona.ciudad = ciudad;
+        //Js
         datosPersona.interesPorJs = confirm("¿Te interesa JavaScript?") ? "Sí" : "No";
     }
 
