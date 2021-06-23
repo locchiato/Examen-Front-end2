@@ -75,14 +75,16 @@ const listado = [{
 function recorrerListadoYRenderizarTarjetas() {
     /* ------------------ PUNTO 3: Escribe tu codigo desde aqui ------------------ */
     let fila = document.querySelector('#fila');
-    listado.forEach(materia => {
-        fila.innerHTML += `
+
+    if (!fila.innerHTML.length)
+        listado.forEach(materia => {
+            fila.innerHTML += `
     <div class="caja">
     <img src=${materia.imgUrl} alt=${materia.lenguajes}>
     <p class="lenguajes">Lenguajes: ${materia.lenguajes}</p>
     <p class="bimestre">Bimestre: ${materia.bimestre}</p>
     </div>`;
-    });
+        });
 }
 
 
