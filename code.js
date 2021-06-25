@@ -7,52 +7,54 @@ let datosPersona = {
 
 function obtenerDatosDelUsuario() {
     /* --------------- PUNTO 1: Escribe tu codigo a partir de aqui --------------- */
+
+    document.getElementById("ver-mas").style.width = "100px";
+    document.querySelector(".card-header").style.minWidth = "400px";
+    document.querySelector("#card").style.minWidth = "400px";
+    document.querySelectorAll(".card-header h3").forEach((h3) => {
+        h3.style.width = "70%";
+    });
+
+    const YEAR = (new Date()).getFullYear();
+
     let nombre, anio, ciudad;
-    //Si el usuario selecciona cancelar, deja de solicitar datos
-    //Nombre
+    /*	Si el usuario selecciona cancelar, deja de solicitar datos	*/
     nombre = prompt("Ingresá tu nombre.");
     if (nombre) {
-        //Año
         anio = prompt("Ingresá el año en que naciste.");
         if (anio) {
-            //Ciudad
             ciudad = prompt("Ingresá la ciudad en donde vives.");
         }
     }
 
-    // Si no puso cancelar cargo los datos
+    /*	Si no puso cancelar cargo los datos	*/
     if (nombre && anio && ciudad) {
         datosPersona.nombre = nombre;
-        datosPersona.edad = 2021 - anio;
+        datosPersona.edad = YEAR - anio;
         datosPersona.ciudad = ciudad;
-        //Js
-        datosPersona.interesPorJs = confirm("¿Te interesa JavaScript?") ? "Sí" : "No";
+        datosPersona.interesPorJs = confirm("¿Te interesa JavaScript?") ?
+            "Sí" :
+            "No";
     }
-
 }
-
 
 function renderizarDatosUsuario() {
     /* ------------------- NO TOCAR NI ELIMINAR ESTA FUNCION. ------------------- */
     obtenerDatosDelUsuario();
     /* --------------- PUNTO 2: Escribe tu codigo a partir de aqui --------------- */
-    //Nombre
+
     if (datosPersona.nombre.length)
-        document.getElementById('nombre').innerHTML = datosPersona.nombre;
+        document.getElementById("nombre").innerHTML = datosPersona.nombre;
 
-    //Edad
     if (datosPersona.edad)
-        document.getElementById('edad').innerHTML = datosPersona.edad;
+        document.getElementById("edad").innerHTML = datosPersona.edad;
 
-    //Ciudad
     if (datosPersona.ciudad.length)
-        document.getElementById('ciudad').innerHTML = datosPersona.ciudad;
+        document.getElementById("ciudad").innerHTML = datosPersona.ciudad;
 
-    //Javascript
     if (datosPersona.interesPorJs.length)
-        document.getElementById('javascript').innerHTML = datosPersona.interesPorJs;
+        document.getElementById("javascript").innerHTML = datosPersona.interesPorJs;
 }
-
 
 /* ------------------------- NO MODIFICAR ESTE ARRAY ------------------------ */
 const listado = [{
@@ -74,10 +76,10 @@ const listado = [{
 
 function recorrerListadoYRenderizarTarjetas() {
     /* ------------------ PUNTO 3: Escribe tu codigo desde aqui ------------------ */
-    let fila = document.querySelector('#fila');
+    let fila = document.querySelector("#fila");
 
     if (!fila.innerHTML.length)
-        listado.forEach(materia => {
+        listado.forEach((materia) => {
             fila.innerHTML += `
     <div class="caja">
     <img src=${materia.imgUrl} alt=${materia.lenguajes}>
@@ -87,8 +89,7 @@ function recorrerListadoYRenderizarTarjetas() {
         });
 }
 
-
 function mostrarYOcultarDescripcionCompleta() {
     /* --------------------- PUNTO 4: Escribe tu codigo aqui --------------------- */
-    document.querySelector('.sobre-mi').classList.toggle('sobre-mi-completo');
+    document.querySelector(".sobre-mi").classList.toggle("sobre-mi-completo");
 }
